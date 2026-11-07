@@ -1,4 +1,3 @@
-import { useState } from "react";
 import AchievementCard from "./AchievementCard";
 
 const Competitions = () => {

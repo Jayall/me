@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const urlMap = {
 	"codeforces": "https://cdn.iconscout.com/icon/free/png-256/free-code-forces-3628695-3029920.png",
 	"leetcode": "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
