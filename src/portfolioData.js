@@ -11,11 +11,11 @@ export const identity = {
   name: "Ando Tiana RAKOTOARISOA",
   legacyName: "RAKOTOARISOA Ando Tiana",
   role: "Software Engineer",
-  tagline: "Electronic Engineer x Fullstack developper x DSA",
+  tagline: "Electronic Engineer x Fullstack developer x DSA",
   existingDescription:
-    "I'm passionate about engineering, web developpement and embedded system",
+    "I'm passionate about engineering, web architecture and embedded system",
   summary:
-    "Curious and rigorous, I like solving complex problems with simple, elegant solutions. Between electronics and full-stack development, I connect hardware and software. Passionate about cybersecurity and DevOps, I want to build reliable, secure, production-ready systems. I am looking for an ambitious team where I can put my skills to work on concrete projects.",
+    "Full-stack engineer with an electronics background, bridging hardware and software. I build secure, production-ready systems and favor simple, elegant solutions to complex problems. Seeking an ambitious team and concrete projects.",
   location: "Antananarivo, Madagascar",
   status: "open to opportunities",
   email: "rktandoscoud@gmail.com",
