@@ -1,22 +1,27 @@
-import { useState } from "react";
+const colors: Record<string, { text: string; bg: string }> = {
+  web: { text: "text-[#dfffe9]", bg: "bg-[#0f1d13]" },
+  ee: { text: "text-[#b5ffc5]", bg: "bg-[#0d1714]" },
+  dsa: { text: "text-[#e7ffe8]", bg: "bg-[#101910]" },
+  other: { text: "text-[#9fffb3]", bg: "bg-[#07140b]" },
+} as const;
 
-const SkillCard = ({skillName, category}) => {
-	const colors = {
-		"web": {"text": "text-blue-800", "bg": "bg-blue-100"},
-		"ee": {"text": "text-green-800", "bg": "bg-green-100"},
-		"dsa": {"text": "text-purple-800", "bg": "bg-purple-100"},
-		"other": {"text": "text-teal-800", "bg": "bg-teal-100"}
-	};
+const SkillCard = ({
+  skillName,
+  category,
+}: {
+  skillName: string;
+  category: string;
+}) => {
+  const color = colors[category];
+  if (color === undefined) return <></>;
 
-	const color = colors[category];
-	if (color === undefined)
-		return (<></>);
-
-	return (
-		<div className={`${color.bg} inline-flex p-2 rounded-full items-center justify-center text-center overflow-hidden`}>
-			<p className={`${color.text} font-semibold`}>{skillName}</p>
-		</div>
-	);
+  return (
+    <div
+      className={`${color.bg} inline-flex p-2 rounded-full items-center justify-center text-center overflow-hidden`}
+    >
+      <p className={`${color.text} font-semibold`}>{skillName}</p>
+    </div>
+  );
 };
 
 export default SkillCard;

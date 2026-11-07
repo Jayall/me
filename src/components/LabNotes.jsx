@@ -1,4 +1,4 @@
-import { labFormula, labTopics } from "../portfolioData";
+import { labFormula } from "../portfolioData";
 import MathBlock from "./MathBlock";
 import Section from "./Section";
 

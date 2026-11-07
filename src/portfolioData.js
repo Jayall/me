@@ -15,7 +15,7 @@ export const identity = {
   existingDescription:
     "I'm passionate about engineering, web architecture and embedded system",
   summary:
-    "Full-stack engineer with an electronics background, bridging hardware and software. I build secure, production-ready systems and favor simple, elegant solutions to complex problems. Seeking an ambitious team and concrete projects.",
+    "Full-stack dev with an electronics background, bridging hardware and software. I build secure, production-ready systems and favor simple, elegant solutions to complex problems. Seeking an ambitious team and concrete projects.",
   location: "Antananarivo, Madagascar",
   status: "open to opportunities",
   email: "rktandoscoud@gmail.com",

@@ -12,27 +12,28 @@ import Skills from "./components/Skills";
 import StatusBar from "./components/StatusBar";
 
 const Homepage = () => {
-	return (
-		<div className="site-shell">
-			<a className="skip-link" href="#main">
-				Skip to content
-			</a>
-			<StatusBar />
-			<main id="main" className="site-main">
-				<Hero />
-				<About />
-				<Competitive />
-				<Experience />
-				<Projects />
-				<Skills />
-				<Education />
-				<Interests />
-				<LabNotes />
-				<Contact />
-			</main>
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="site-shell">
+      <div className="background-layer" aria-hidden="true" />
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <StatusBar />
+      <main id="main" className="site-main">
+        <Hero />
+        <About />
+        <Competitive />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Education />
+        <Interests />
+        <LabNotes />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default Homepage;
