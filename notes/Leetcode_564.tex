@@ -1,0 +1,110 @@
+% title: LEETCODE 564 (Solution)
+% overview: This document describes a method to solve a hard solution on leetcode (564. The method is to find the next palindrome and the previous palindrome, then compare the distance between the two palindromes and the input number.)
+% date: 2024-09
+% tags: Math, Palindrome, Leetcode, C++, Problem solving
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{minted}   % Compiler avec -shell-escape (activé par défaut sur Overleaf)
+
+\title{Fanazavana}
+\author{Rakotoarisoa Ando}
+\date{July 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{564. Find the Closest Palindrome [Hard - Daily]}
+
+\textbf{Input} : $n$ une chaîne représentant un nombre entre $0$ et $10^{18}$, soit $N = |n|$.
+
+\textbf{Problème} : Trouver un palindrome $P$ différent de $n$ qui minimise la distance entre $P$ et $n$ (en terme de valeur absolue ilay resahina eto).
+
+\textbf{Solution} :
+
+\textbf{Observation 1} : Il faut chercher le palindrome akaiky indrindra, c'est-à-dire le prochain palindrome et le précédent palindrome.
+
+\textbf{Observation 2} : Si on peut juste transformer la chaîne en palindrome et mahafeno an'ireo fepetra ireo ilay izy dia on est bon. Il suffit d'assigner $s_{N - i + 1} \leftarrow s_i$.
+
+\textbf{Observation 3} : Sinon il faut se salir un peu les mains. Sans perte de généralité, considérons l'algorithme qui va trouver le prochain palindrome $P$ différent de $n$. On supposera alors que $P > n$. On le veut le plus proche possible de $n$, donc quel indice (puissance de $10$) changer ?
+
+Si on choisit un indice $i < j < \frac{N}{2}$, alors en choisissant de modifier $i$ plutôt que $j$, on aura
+\[
+P \leftarrow P + a\,10^{i - 1} + b\,10^{N - i}
+\]
+tandis que si on choisit $j$, on aura
+\[
+P \leftarrow P + c\,10^{j - 1} + d\,10^{N - j}
+\]
+tel que $a\,10^{i - 1} + b\,10^{N - i} > c\,10^{j - 1} + d\,10^{N - j}$. Donc si on choisit $i$, on « s'éloigne » plus de $n$ que si l'on choisit $j$.
+
+On peut donc procéder à un algorithme glouton en parcourant d'abord le plus au centre (meilleur local), puis en s'étendant vers les bords. Il est à noter qu'il faut aussi gérer le cas particulier $9\ldots9$ ($N$ fois), pour lequel la réponse est $1\underbrace{0\ldots0}_{N-1}1$.
+
+\begin{minted}{c++}
+using ll = long long;
+
+class Solution {
+public:
+    string nextPalindrome(string s, string& ref)
+    {
+        int n = s.size();
+        for (int i = 0; i < n / 2; i++)
+            if (s[i] != s[n - i - 1])
+                s[n - i - 1] = s[i];
+        if (stoll(s) > stoll(ref))
+            return (s);
+        int i = n / 2 - (n + 1) % 2;
+        while (i >= 0 && s[i] == '9' && s[n - i - 1] == '9')
+        {
+            s[i] = '0', s[n - i - 1] = '0';
+            i--;
+        }
+        if (i < 0) s += '1', s[++i] = '1';
+        else s[n - i - 1] = ++s[i];
+        return (s);
+    }
+
+    string previousPalindrome(string s, string& ref)
+    {
+        int n = s.size();
+        for (int i = 0; i < n / 2; i++)
+            if (s[i] != s[n - i - 1])
+                s[n - i - 1] = s[i];
+        if (stoll(s) < stoll(ref))
+            return (s);
+        int i = n / 2 - (n + 1) % 2;
+        while (i >= 0 && s[i] == '0' && s[n - i - 1] == '0')
+        {
+            s[i] = '9', s[n - i - 1] = '9';
+            i--;
+        }
+        if (i < 0) s.pop_back();
+        else
+        {
+            if (!i && s[i] == '1' && n > 1) s = string(n - 1, '9');
+            else s[n - i - 1] = --s[i];
+        }
+        return (s);
+    }
+
+    ll distance(string s, string t)
+    {
+        return abs(stoll(s) - stoll(t));
+    }
+
+    string nearestPalindromic(string n) {
+        string nxt = nextPalindrome(n, n);
+        string prv = previousPalindrome(n, n);
+        ll d1 = distance(nxt, n), d2 = distance(prv, n);
+        if (d1 == d2) return prv;
+        return (d1 < d2) ? nxt : prv;
+    }
+};
+\end{minted}
+
+\end{document}

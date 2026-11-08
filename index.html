@@ -9,8 +9,27 @@
       content="Ando Tiana RAKOTOARISOA — Software Engineer bridging electronics and full-stack development. Cybersecurity, DevOps, and competitive programming."
     />
     <title>Ando Tiana RAKOTOARISOA — Software Engineer</title>
-    <script type="module" crossorigin src="/me/assets/index-BBmfV67Z.js"></script>
-    <link rel="stylesheet" crossorigin href="/me/assets/index-BDCtUoSu.css">
+    <script>
+      (function () {
+        var location = window.location;
+        if (location.search[1] === "/") {
+          var decoded = location.search
+            .slice(1)
+            .split("&")
+            .map(function (segment) {
+              return segment.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            "",
+            location.pathname.slice(0, -1) + decoded + location.hash,
+          );
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/me/assets/index-Bbe22GEi.js"></script>
+    <link rel="stylesheet" crossorigin href="/me/assets/index-Br9_WxZ6.css">
   </head>
   <body>
     <div id="root"></div>
