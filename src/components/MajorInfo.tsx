@@ -3,7 +3,7 @@ import SkillCard from "./SkillCard";
 
 const MajorInfo = ({ openToOp = true }) => {
   const name = "RAKOTOARISOA Ando Tiana";
-  const stacks = "Electronic Engineer x Fullstack developer x DSA";
+  const stacks = "Electronic Engineer x Full-stack developer x DSA";
   const description =
     "I'm passionate about engineering, web developpement and embedded system";
   const webSkills = ["React", "Nodejs", "FastAPI", "Tailwind", "Postgresql"];

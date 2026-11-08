@@ -63,7 +63,6 @@ const Competitive = () => (
     </div>
 
     <p className="fine-print">
-      Handles and current ratings are carried over from the previous site.{" "}
       <a href="#lab">See the Lab for math notes.</a>
     </p>
 
@@ -82,11 +81,6 @@ const Competitive = () => (
         ))}
       </ol>
     </div>
-
-    <p className="cross-link">
-      Competitive programming and <a href="#mathematics">mathematics</a> feed
-      each other: see the interest section.
-    </p>
   </Section>
 );
 

@@ -20,10 +20,7 @@ const AboutMe = () => {
       </div>
       <div>
         <ul className="flex flex-col gap-2">
-          <li className="text-left">
-            I love maths and it helps me to improve at engineering and problem
-            solving.{" "}
-          </li>
+          <li className="text-left">I love maths and solving. </li>
           <li className="text-left">
             My electronics background shapes how I think about systems: from the
             hardware layer up.
@@ -50,11 +47,11 @@ const Difference = () => {
           </li>
           <li className="flex gap-2 items-center">
             <BsStack />
-            Fullstack + low-level depth
+            Full-stack + low-level depth
           </li>
           <li className="flex gap-2 items-center">
             <FaHammer />
-            Engineer mindset - build things
+            Engineer mindset
           </li>
         </ul>
       </div>

@@ -11,7 +11,7 @@ export const identity = {
   name: "Ando Tiana RAKOTOARISOA",
   legacyName: "RAKOTOARISOA Ando Tiana",
   role: "Software Engineer",
-  tagline: "Electronic Engineer x Fullstack developer x DSA",
+  tagline: "Electronic Engineer x Full-stack developer x DSA",
   existingDescription:
     "I'm passionate about engineering, web architecture and embedded system",
   summary:
@@ -149,7 +149,6 @@ export const skillGroups = [
       "Number theory",
       "Optimization",
       "Matrices",
-      "C++",
       "Problem solving",
     ],
     link: { label: "open the CP dashboard", href: "#competitive" },
@@ -199,7 +198,7 @@ export const skillGroups = [
     skills: ["Data Science", "Cybersecurity", "Monitoring", "Observability"],
   },
   {
-    title: "Collaboration",
+    title: "Workflow",
     skills: ["Trello", "Microsoft Teams", "Visual Studio Code", "OpenCode"],
   },
 ];

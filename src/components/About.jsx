@@ -7,8 +7,8 @@ import Section from "./Section";
 const differentiators = [
   { icon: IoHardwareChipSharp, label: "Hardware - Software bridge" },
   { icon: TbBinaryTreeFilled, label: "Strong DSA fundamentals" },
-  { icon: BsStack, label: "Fullstack + low-level depth" },
-  { icon: FaHammer, label: "Engineer mindset - build things" },
+  { icon: BsStack, label: "Full-stack + low-level depth" },
+  { icon: FaHammer, label: "Engineer mindset" },
 ];
 
 const About = () => (
@@ -16,10 +16,7 @@ const About = () => (
     <div className="about-grid">
       <article className="about-card panel hud-corners">
         <ul className="about-list">
-          <li>
-            I love maths and it helps me to improve at engineering and problem
-            solving.
-          </li>
+          <li>I love maths and problem solving.</li>
           <li>
             My electronics background shapes how I think about systems: from the
             hardware layer up.
