@@ -60,9 +60,8 @@ const LabNotes = () => (
 				</div>
 			</article> */}
       <article className="lab-card panel hud-corners">
-        <h3 className="subheading">{labFormula.title}</h3>
         <p className="terminal-command">
-          <span className="prompt">$</span> cat fav_formula.md
+          <span className="prompt">$</span> cat talent_formula.md
         </p>
         <MathBlock tex={labFormula.tex} label="My fav formula" />
       </article>

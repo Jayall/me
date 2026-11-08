@@ -258,6 +258,6 @@ export const labExample = {
 };
 
 export const labFormula = {
-  title: "Favorite formula",
-  tex: "\\text{Let } x_i > 0 \\text{ be the variable representing hard work in record } i. \\\\ \\boxed{\\mathbf{TALENT} = \\sum_{i=1}^{N} x_i^{d_i} \\quad (d_i > 0)}",
+  title: "Talent formula",
+  tex: "\\text{Let } x_i > 0 \\text{ be the variable representing hard work in record } i. \\\\ \\boxed{\\mathbf{TALENT} = \\sum_{i=1}^{N} x_i^{d_i}}",
 };
