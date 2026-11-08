@@ -5,7 +5,10 @@
   "type": "module",
   "homepage": "https://github.com/Jayall/me",
   "scripts": {
+    "notes": "node scripts/build-notes.mjs",
+    "predev": "npm run notes",
     "dev": "vite",
+    "prebuild": "npm run notes",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview --base /me/",

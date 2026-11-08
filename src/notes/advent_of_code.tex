@@ -1,0 +1,33 @@
+% title: ADVENT OF CODE (Solution)
+% overview: This document solves Advent of Code 2024 day 13 by turning the problem into a 2x2 linear system, then solving for each unknown by combining the equations (which amounts to Cramer’s rule).
+% date: 2024-09
+% tags: Matrice, System of equations, Linear algebra, Cramer's rule, Advent of Code
+
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+
+\title{Advent of Code - Day 13 (Solution)}
+\author{Rakotoarisoa Ando}
+\date{September 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{DAY 13 - ADVENT OF CODE}
+On a 2 boutons A et B possédant 2 caractéristiques chacun: $k_x$ indique que le bouton permet au point de se déplacer $k_x$ fois sur l'axe des abscisses et $k_y$ qui indique que le point se déplace $k_y$ fois sur l'axe des ordonnées. 
+\\Le but est de calculer la fonction score $f(\alpha, \beta) = 3\alpha + \beta$ pour obtenir le prix situé à $(P_x, P_y)$ tel qu'on a appuyé $\alpha$ fois le bouton A et $\beta$ fois le bouton B.
+\\\\Soit le bouton A avec les caractéristiques $\begin{pmatrix}A_x\\A_y\end{pmatrix}$ et le bouton B avec les caractéristiques $\begin{pmatrix}B_x\\B_y\end{pmatrix}$
+\\\\Soit alors l'equation suivante:
+    $$\alpha\begin{pmatrix}A_x\\A_y\end{pmatrix} + \beta\begin{pmatrix}B_x\\B_y\end{pmatrix} = \begin{pmatrix}P_x\\P_y\end{pmatrix}$$
+\\\\ Ceci forme le système d'équation suivante:
+$$\begin{cases}
+    \alpha A_x + \beta B_x = P_x\quad (1)\\
+    \alpha A_y + \beta B_y = P_y \quad (2)
+\end{cases}$$
+\\Pour obtenir $\alpha$, on multiplie $(1)$ par $B_y$ et $(2)$ par $-B_x$, et on additionne les 2 éxpressions et on obtient alors l'éxpression de $\alpha$ suivante:
+$$\alpha = \frac{(B_yP_x - B_xP_y)}{B_yA_x - B_xA_y}$$
+\\\\L'expression de $\beta$ s'obtient de la meme manière:
+$$\beta = \frac{(A_yP_x - A_xP_y)}{A_yB_x - A_xB_y}$$
+\end{document}

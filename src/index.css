@@ -1029,6 +1029,99 @@ h1 {
   color: var(--muted);
 }
 
+.lab-notes {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.lab-notes-head {
+  margin-bottom: 1rem;
+}
+
+.lab-notes-intro {
+  max-width: 72ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.lab-notes-intro code {
+  color: var(--accent-bright);
+}
+
+.note-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.note-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: clamp(1.1rem, 2.6vw, 1.5rem);
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.note-card:hover {
+  border-color: var(--accent-line);
+  transform: translateY(-2px);
+}
+
+.note-card-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.note-card-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+
+.note-card-date {
+  color: var(--dim);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.note-card-overview {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.note-card-foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.note-card-link {
+  justify-self: end;
+  margin-left: auto;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.route-loading {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  color: var(--dim);
+  font-size: 0.85rem;
+}
+
+.route-loading .prompt {
+  color: var(--accent-bright);
+}
+
 .math-block {
   max-width: 100%;
   overflow-x: auto;
@@ -1260,7 +1353,8 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .project-grid {
+  .project-grid,
+  .note-card-grid {
     grid-template-columns: 1fr;
   }
 }
